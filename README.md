@@ -1,7 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+One Time Start of Season Rake Task
+  `rake load_all_game_links:load`
+
+Weekly Rake Task
+  `rake load_game_info.load`
+
+Daily Rake Task
+  `rake load_game_stats.load`
+
 
 Things you may want to cover:
 

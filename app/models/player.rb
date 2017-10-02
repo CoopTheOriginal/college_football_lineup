@@ -3,5 +3,5 @@ class Player < ApplicationRecord
 
   has_many :stats, inverse_of: :players
 
-  enum position: [:quarterback, :halfback, :wide_receiver, :kicker]
+  enum position: %i(quarterback halfback wide_receiver kicker)
 end

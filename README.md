@@ -3,7 +3,7 @@
 One Time Start of Season Rake Task
   `rake load_all_game_links:load`
 
-Weekly Rake Task
+Weekly Rake Task (Monday)
   `rake load_game_info.load`
 
 Daily Rake Task

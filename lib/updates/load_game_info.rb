@@ -2,12 +2,14 @@ module Updates
   class LoadGameInfo
     def load
       Game.not_finished
-        .where('start_date < ?', Date.current.weeks_since(2))
-        .each { |game| update_game_info(game) }
+          .where('start_date < ?', Date.current.weeks_since(2))
+          .each { |game| update_game_info(game) }
     end
 
     private def update_game_info(game)
       info = Ncaa.new(game.link).response
+
+      sleep(1)
 
       game.update!(
         start_date: Date.parse(info['startDate']),
@@ -24,7 +26,8 @@ module Updates
     end
 
     private def find_create_team(response, home_away)
-      Team.find_or_initialize_by(name: response[home_away]['nameRaw']).tap do |team|
+      Team.find_or_initialize_by(name: response[home_away]['nameRaw'])
+          .tap do |team|
         team.short_name = response[home_away]['shortname']
         team.save
       end

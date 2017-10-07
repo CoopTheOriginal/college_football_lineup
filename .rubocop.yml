@@ -3,7 +3,6 @@ AllCops:
   Exclude:
     - 'bin/**/*'
     - 'db/**/*'
-    - 'node_modules/**/*'
     - 'config/spring.rb'
 
 Bundler/OrderedGems:
